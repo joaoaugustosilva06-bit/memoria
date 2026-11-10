@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17152b">
+  <title>NEON RACER — Arcade 6-bit</title>
+  <link rel="stylesheet" href="corrida.css">
+  <script src="corrida.js" defer></script>
+</head>
+<body>
+  <main class="cabinet">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-icon">▣</span> ARCADE<span class="brand-dot">.06</span></a>
+      <span class="top-label">INSERT COIN <b>◆</b> PRESS START</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">★ CORRIDA DE ALTA VELOCIDADE ★</p>
+      <h1>NEON <span>RACER</span></h1>
+      <p class="subtitle">Pise fundo. Desvie. Sobreviva.</p>
+    </section>
+
+    <section class="machine">
+      <div class="hud">
+        <div><small>PONTOS</small><strong id="score">000000</strong></div>
+        <div><small>VELOCIDADE</small><strong><span id="speed">0</span><i> KM/H</i></strong></div>
+        <div><small>RECORDE</small><strong id="best">000000</strong></div>
+      </div>
+      <div class="screen-wrap">
+        <canvas id="game" width="480" height="640" aria-label="Jogo de corrida. Use as setas esquerda e direita para dirigir."></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-box">
+            <div class="pixel-car">▰</div>
+            <p class="overlay-kicker" id="overlay-kicker">ARCADE 6-BIT</p>
+            <h2 id="overlay-title">READY?</h2>
+            <p id="overlay-copy">Desvie do trânsito e tente bater seu recorde.</p>
+            <button id="start" class="start-btn">▶ INICIAR CORRIDA</button>
+            <p class="key-hint">← → OU A / D PARA DIRIGIR</p>
+          </div>
+        </div>
+        <div class="pause-tag hidden" id="pause-tag">Ⅱ PAUSADO</div>
+      </div>
+      <div class="machine-bottom">
+        <span><b class="led"></b> PLAYER 1</span>
+        <span>★ HIGH SPEED ★</span>
+        <span>© ARCADE 06</span>
+      </div>
+    </section>
+
+    <div class="mobile-controls" aria-label="Controles de direção">
+      <button id="left" aria-label="Virar à esquerda">◀</button>
+      <button id="right" aria-label="Virar à direita">▶</button>
+    </div>
+    <div class="actions">
+      <button id="pause" class="secondary" disabled>Ⅱ PAUSAR</button>
+      <button id="sound" class="secondary" aria-pressed="true">♫ SOM: ON</button>
+    </div>
+    <footer>FEITO PARA QUEM NÃO TEM MEDO DA VELOCIDADE <span>● ● ●</span></footer>
+  </main>
+</body>
+</html>
