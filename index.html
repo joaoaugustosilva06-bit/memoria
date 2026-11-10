@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Jogo da memória: encontre todos os pares!">
+  <title>Memória — Jogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Memória, início"><span class="brand-mark">✳</span><span>mente<span class="brand-dot">.</span></span></a>
+      <span class="top-note"><span class="live-dot"></span> DESAFIO DE MEMÓRIA</span>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span>✦</span> TREINE SEU CÉREBRO</div>
+      <h1>Um par de cada vez<span>.</span></h1>
+      <p>Vire as cartas, encontre as combinações e coloque sua memória à prova.</p>
+    </section>
+
+    <section class="game-shell" aria-label="Jogo da memória">
+      <div class="game-toolbar">
+        <div class="difficulty">
+          <span class="control-label">DIFICULDADE</span>
+          <div class="segmented" role="group" aria-label="Escolha a dificuldade">
+            <button class="level-btn active" data-level="easy" aria-pressed="true">Fácil</button>
+            <button class="level-btn" data-level="medium" aria-pressed="false">Médio</button>
+            <button class="level-btn" data-level="hard" aria-pressed="false">Difícil</button>
+          </div>
+        </div>
+        <button class="restart-btn" id="restart" type="button"><span>↻</span> Reiniciar</button>
+      </div>
+
+      <div class="stats" aria-live="polite">
+        <div class="stat"><span class="stat-icon">◷</span><div><span class="stat-label">TEMPO</span><strong id="timer">00:00</strong></div></div>
+        <div class="stat"><span class="stat-icon">▦</span><div><span class="stat-label">MOVIMENTOS</span><strong id="moves">0</strong></div></div>
+        <div class="stat"><span class="stat-icon">♡</span><div><span class="stat-label">PARES</span><strong id="pairs">0 / 6</strong></div></div>
+      </div>
+
+      <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+      <div class="board" id="board" aria-label="Cartas do jogo"></div>
+
+      <div class="game-footer">
+        <span><kbd>?</kbd> Encontre todos os pares para vencer</span>
+        <span id="status">Sua partida está pronta. Boa sorte!</span>
+      </div>
+    </section>
+
+    <footer class="page-footer"><span>FEITO PARA DESAFIAR SUA MEMÓRIA</span><span>CONCENTRE-SE · DIVIRTA-SE · REPITA</span></footer>
+  </main>
+
+  <div class="modal hidden" id="win-modal" role="dialog" aria-modal="true" aria-labelledby="win-title">
+    <div class="modal-card">
+      <div class="win-spark">✦</div>
+      <div class="eyebrow">MISSÃO CUMPRIDA</div>
+      <h2 id="win-title">Memória afiada<span>!</span></h2>
+      <p>Você encontrou todos os pares. Mandou muito bem!</p>
+      <div class="win-stats"><div><strong id="final-time">00:00</strong><span>TEMPO</span></div><div><strong id="final-moves">0</strong><span>MOVIMENTOS</span></div></div>
+      <button class="play-again" id="play-again" type="button">Jogar novamente <span>→</span></button>
+    </div>
+  </div>
+</body>
+</html>
